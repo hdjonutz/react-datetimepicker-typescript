@@ -1,0 +1,60 @@
+@import '../css/colors.less';
+
+:local{
+  .line-bottom{
+    border-bottom: @border-top-color;
+  }
+  .days-container{
+    padding: @padding-global;
+    .month-year{
+      font-size: @font-size-small;
+      justify-content: flex-end;
+      flex: 1;
+      display: flex;
+      div:first-child{
+        flex: 1;
+        display: flex;
+      }
+      div{
+        img{
+          height: 20px;
+          margin: 0 15px;
+        }
+      }
+    }
+    .days-title, .days-number{
+      display: inline-table;
+      div {
+        text-align: center;
+        vertical-align: middle;
+        height: 24px;
+        width: 32px;
+        display: inline-block;
+        padding: 2px;
+        margin: 2px;
+        font-size: @font-size-small;
+        border: 2px solid @rect-border;
+        padding-top: 8px;
+        position: relative;
+        overflow: hidden;
+      }
+    }
+    .days-number{
+      div:hover{
+        border: 2px solid @color-text;
+      }
+      div.day-selected{
+        border: 2px solid @color-text-high-lichted;
+      }
+    }
+  }
+
+  .past-present-disabled{
+    color: @color-text-disabled;
+  }
+  .now-year-month-today{
+    color: @color-text;
+    background: @color-text-high-lichted;
+  }
+}
+

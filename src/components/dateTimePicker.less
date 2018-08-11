@@ -1,0 +1,40 @@
+@import '../css/colors.less';
+
+:local{
+  .dateTimePicker-container{
+    background-color: @background-color;
+    border: @border-top-color;
+    border-radius: 2px;
+    box-shadow: 0 0 5px #aaa;
+    //height: @height;
+    width: @width;
+    font-family: @fontFamily;
+    color: @color-text;
+    display: none;
+
+    .line-top{
+      border-top: @border-top-color;
+    }
+  }
+  .show{
+    display: block;
+    .dateTimePicker-modal-back{
+    }
+  }
+  .elementFocus{
+    height:200px;
+    width:200px;
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 0.25s ease-out;
+    transition: opacity 0.25s ease-out;
+    overflow: hidden;
+    background: #d5d5d5;
+  }
+  .elementFocus.showFocus{
+    transform: scale(0.4);
+    opacity: 0.2;
+    transition: transform 0.25s ease-in;
+    transition: opacity 0.25s ease-in;
+  }
+}

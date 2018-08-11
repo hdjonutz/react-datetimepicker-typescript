@@ -1,0 +1,124 @@
+@import '../fonts/font.css';
+
+@fontFamily: Roboto;
+
+@font-size-extra-big: 42px;
+@font-size-big: 20px;
+@font-size-small: 16px;
+@padding-global: 15px;
+
+@background-color: #424242;
+
+@color-text: #fff;
+@color-text-disabled: #828282;
+@color-text-today: #828282;
+@color-text-high-lichted: #4f9cff;
+
+@rect-border: #464646;
+@border-top-color: 1px solid #aaa;
+@height: 550px;
+@width: 340px;
+
+*{
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome and Opera */
+}
+.calendar-container{
+  background-color: @background-color;
+  border: @border-top-color;
+  border-radius: 2px;
+  box-shadow: 0 0 5px #aaa;
+  //height: @height;
+  width: @width;
+  font-family: @fontFamily;
+  color: @color-text;
+	
+  .line-top{
+    border-top: @border-top-color;
+  }
+  .hours-container{
+    padding: @padding-global;
+    .current-hour{
+      font-size: @font-size-extra-big;
+    }
+    .current-day-mounth-year{
+      font-size: @font-size-small;
+      color: @color-text-high-lichted;
+    }
+  }
+  .days-container, .months-container, .years-container{
+    padding: @padding-global;
+    .month-year, .month-year, .years{
+      font-size: @font-size-small;
+      justify-content: flex-end;
+      flex: 1;
+      display: flex;
+      div:first-child{
+        flex: 1;
+        display: flex;
+      }
+      div{
+        img{
+          height: 20px;
+          margin: 0 15px;
+        }
+      }
+    }
+    .days-title, .days-number{
+      display: inline-table;
+      div {
+        text-align: center;
+        vertical-align: middle;
+        height: 24px;
+        width: 32px;
+        display: inline-block;
+        padding: 2px;
+        margin: 2px;
+        font-size: @font-size-small;
+        border: 2px solid @rect-border;
+        padding-top: 8px;
+      }
+    }
+    .days-number{
+      div:hover{
+        border: 2px solid @color-text;
+      }
+      div.day-selected{
+        border: 2px solid @color-text-high-lichted;
+      }
+    }
+    .month-name{
+      display: inline-table;
+      div {
+        text-align: center;
+        vertical-align: middle;
+        height: 42px;
+        width: 65px;
+        display: inline-block;
+        padding: 2px;
+        margin: 2px;
+        font-size: @font-size-small;
+        border: 2px solid @rect-border;
+        padding-top: 22px;
+      }
+      div:hover{
+        border: 2px solid @color-text;
+      }
+      div.month-selected{
+        border: 2px solid @color-text-high-lichted;
+      }
+    }
+  }
+  .text-disabled{
+    color: @color-text-disabled;
+  }
+  .text-today{
+    color: @color-text;
+    background: @color-text-high-lichted;
+  }
+}

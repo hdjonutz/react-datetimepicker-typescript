@@ -1,0 +1,31 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "standard"
+  ],
+  "rules": {
+    "no-console": 0,
+    "no-alert": 1,
+    "comma-dangle": 0,
+    "no-extend-native": 1,
+    "no-template-curly-in-string": 1,
+    "semi": [1, "always"]
+
+  },
+  "env": {
+    "node": true,
+    "amd": true
+  },
+  "globals": {
+  },
+  "parserOptions": {
+  },
+  "settings": {
+    "import/ignore": [
+      "node_modules",
+      "\\.rac$"
+    ]
+  }
+}

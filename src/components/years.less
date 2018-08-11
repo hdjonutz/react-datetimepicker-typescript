@@ -1,0 +1,56 @@
+@import '../css/colors.less';
+
+:local{
+  .line-bottom{
+    border-bottom: @border-top-color;
+  }
+  .years-container{
+    padding: @padding-global;
+    .years{
+      font-size: @font-size-small;
+      justify-content: flex-end;
+      flex: 1;
+      display: flex;
+      div:first-child{
+        flex: 1;
+        display: flex;
+      }
+      div{
+        img{
+          height: 20px;
+          margin: 0 15px;
+        }
+      }
+    }
+    .year-name{
+      display: inline-table;
+      div {
+        text-align: center;
+        vertical-align: middle;
+        height: 42px;
+        width: 65px;
+        display: inline-block;
+        padding: 2px;
+        margin: 2px;
+        font-size: @font-size-small;
+        border: 2px solid @rect-border;
+        padding-top: 22px;
+        position: relative;
+        overflow: hidden;
+      }
+      div:hover{
+        border: 2px solid @color-text;
+      }
+      div.month-selected{
+        border: 2px solid @color-text-high-lichted;
+      }
+    }
+  }
+  .past-present-disabled{
+    color: @color-text-disabled;
+  }
+  .now-year-month-today{
+    color: @color-text;
+    background: @color-text-high-lichted;
+  }
+}
