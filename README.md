@@ -113,4 +113,4 @@ ReactDOM.render(
     </div>,
     document.getElementById('root_React_date_time_picker'));
 ```
-![alt text](https://github.com/hdjonutz/react-date-Time-Picker/blob/master/dateTimePickerNo header.png)
+![alt text](https://github.com/hdjonutz/react-date-Time-Picker/blob/master/dateTimePickerNoheader.png)
