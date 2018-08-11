@@ -25,8 +25,8 @@ interface ReactDateTimePickerProps {
     date?: number;
     language?: string;
     receiveSelectLevel?: number;
-    element?: any;
-    format?: string;
+    element?: string;
+    format: string;
     closeAutomatic?: boolean;
     minDate?: number;
     maxDate?: number;
@@ -39,6 +39,7 @@ interface ReactDateTimePickerStates {
     currentDisplayLayer: number;
     defaultOnDisplay: number;
     selected: number;
+    element: string;
 }
 
 export default class ReactDateTimePicker extends React.Component<ReactDateTimePickerProps, ReactDateTimePickerStates> {
@@ -51,7 +52,8 @@ export default class ReactDateTimePicker extends React.Component<ReactDateTimePi
             isOpen: false,
             currentDisplayLayer: 1,
             defaultOnDisplay: 1,
-            selected: this.props.date
+            selected: this.props.date,
+            element: this.props.element || 'input'
         };
 
         this.setWrapperRef = this.setWrapperRef.bind(this);
@@ -77,7 +79,9 @@ export default class ReactDateTimePicker extends React.Component<ReactDateTimePi
         if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
             this.setState({isOpen: false});
             document.removeEventListener('click', this.handleClickOutside);
-            this.props.onClose(this.state.selected);
+            if (this.props.onClose) {
+                this.props.onClose(this.state.selected);
+            }
         }
     }
 
@@ -89,7 +93,7 @@ export default class ReactDateTimePicker extends React.Component<ReactDateTimePi
         // console.log('updateInputOnChange', e);
     }
     checkAndClose (level: number): void {
-        if ( this.props.closeAutomatic && this.props.receiveSelectLevel === level) {
+        if ( this.props.closeAutomatic && this.props.receiveSelectLevel === level && this.props.onClickChangeDate) {
             this.props.onClickChangeDate(this.state.selected);
         }
     }
@@ -124,15 +128,15 @@ export default class ReactDateTimePicker extends React.Component<ReactDateTimePi
 
         return (
             <div>
-                {this.props.element && this.props.element === 'div' &&
+                {this.state.element === 'div' &&
                     <div onClick={this.onClickShow.bind(this)}>
                         {moment(value).format(this.props.format)}
                         </div>}
-                {this.props.element && this.props.element === 'span' &&
+                {this.state.element === 'span' &&
                     <span onClick={this.onClickShow.bind(this)}>
                         {moment(value).format(this.props.format)}
                         </span>}
-                {this.props.element && this.props.element === 'input' &&
+                {this.state.element === 'input' &&
                     <input onClick={this.onClickShow.bind(this)}
                            type='text'
                            onChange={this.updateInputOnChange.bind(this)}
@@ -147,31 +151,25 @@ export default class ReactDateTimePicker extends React.Component<ReactDateTimePi
                             <Days defaultOnDisplay={this.state.currentDisplayLayer}
                                   currentDisplayLayer={this.state.currentDisplayLayer}
                                   language={this.props.language}
-                                  receiveSelectLevel={this.props.receiveSelectLevel}
                                   date={this.state.selected || this.props.date}
                                   minDate={this.props.minDate}
                                   maxDate={this.props.maxDate}
-                                  closeAutomatic={this.props.closeAutomatic}
                                   goUpOnClick={this.onGoUpOnClick.bind(this)}
                                   goDownOnClick={this.onGoDownOnClick.bind(this)} />
 
                             <Months defaultOnDisplay={this.state.currentDisplayLayer}
                                     currentDisplayLayer={this.state.currentDisplayLayer}
                                     language={this.props.language}
-                                    receiveSelectLevel={this.props.receiveSelectLevel}
                                     minDate={this.props.minDate}
                                     maxDate={this.props.maxDate}
                                     date={this.state.selected || this.props.date}
-                                    closeAutomatic={this.props.closeAutomatic}
                                     goUpOnClick={this.onGoUpOnClick.bind(this)}
                                     goDownOnClick={this.onGoDownOnClick.bind(this)} />
 
                             <Years defaultOnDisplay={this.state.currentDisplayLayer}
                                    currentDisplayLayer={this.state.currentDisplayLayer}
                                    language={this.props.language}
-                                   closeAutomatic={this.props.closeAutomatic}
                                    date={this.state.selected || this.props.date}
-                                   receiveSelectLevel={this.props.receiveSelectLevel}
                                    minDate={this.props.minDate}
                                    maxDate={this.props.maxDate}
                                    goUpOnClick={this.onGoUpOnClick.bind(this)}

@@ -18,7 +18,6 @@ ReactDOM.render(
                              defaultOnDisplay={1}
                              receiveSelectLevel={1}
                              format={'LL'}
-                             closeAutomatic={true}
                              minDate={1521828754705}
                              maxDate={1539969110225}
                              element={'input'}
@@ -32,7 +31,6 @@ ReactDOM.render(
                              receiveSelectLevel={2}
                              date={1532170459658}
                              format={'LL'}
-                             closeAutomatic={false}
                              minDate={1521828754705}
                              maxDate={1539969110225}
                              element={'span'}

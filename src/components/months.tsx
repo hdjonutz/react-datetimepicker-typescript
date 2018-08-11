@@ -10,8 +10,6 @@ interface MonthsProps {
     currentDisplayLayer: number;
     language: string;
     date?: number;
-    receiveSelectLevel?: number;
-    closeAutomatic?: boolean;
     minDate: number;
     maxDate: number;
     goUpOnClick(value: number, dateSelected: number): any;
