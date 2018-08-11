@@ -40,13 +40,13 @@ export function getAllDaysFomLayoutMonthDisplay(date: number = null, daySelected
             status: pastMonth.month() === nowMonth.month(),
             day: pastMonth.date(),
             isSelected: pastMonth.date() === daySelect.date() && pastMonth.month() === daySelect.month(),
-            dataStamp: pastMonth.valueOf()
+            dataStamp: pastMonth.valueOf(),
         });
         pastMonth.add(1, 'd');
     }
     return days;
 }
-export function getAllMonthsFomLayoutYearDisplay (date: number = null, monthSelected: number = null): any {
+export function getAllMonthsFomLayoutYearDisplay(date: number = null, monthSelected: number = null): any {
     // 4 * 4 = 16 months; (next)12 + 4 and (back)4 + 12
     const nowMonth = moment();
     const months: any = [];
@@ -61,16 +61,16 @@ export function getAllMonthsFomLayoutYearDisplay (date: number = null, monthSele
         months.push({
             isNowMonth: pastYear.month() === nowMonth.month() && pastYear.year() === nowMonth.year(),
             status: pastYear.year() === nowYear.year(),
-            month: pastYear.format('MMM').replace('.',''),
+            month: pastYear.format('MMM').replace('.', ''),
             isSelected: pastYear.month() === monthSelect.month() && pastYear.year() === monthSelect.year(),
-            dataStamp: pastYear.valueOf()
+            dataStamp: pastYear.valueOf(),
         });
         pastYear.add(1, 'M');
     }
     return months;
 }
 
-export function getAllYearsFomLayoutAllYearDisplay (date: number = null, yearSelected: number = null): any {
+export function getAllYearsFomLayoutAllYearDisplay(date: number = null, yearSelected: number = null): any {
     // 4 * 4 = 16 months; (next)12 + 4 and (back)4 + 12
     const now = moment();
     const years: any = [];
@@ -87,7 +87,7 @@ export function getAllYearsFomLayoutAllYearDisplay (date: number = null, yearSel
             status: true,
             year: pastYear.format('YYYY'),
             isSelected: pastYear.year() === yearSelect.year(),
-            dataStamp: pastYear.valueOf()
+            dataStamp: pastYear.valueOf(),
         });
         pastYear.add(1, 'Y');
     }

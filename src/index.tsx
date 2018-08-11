@@ -65,4 +65,3 @@ ReactDOM.render(
         4
     </div>,
     document.getElementById('root_React_date_time_picker'));
-

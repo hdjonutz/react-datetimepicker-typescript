@@ -91,7 +91,7 @@ export default class Years extends React.Component<YearsProps, YearsState> {
             yearsbetwin: `${yearsName[0].year}-${yearsName[15].year}`,
             yearsName,
             date: this.state && this.state.date || this.props.date,
-            yearSelected: selected
+            yearSelected: selected,
         });
     }
 
@@ -108,7 +108,7 @@ export default class Years extends React.Component<YearsProps, YearsState> {
                         <div><img src='images/angle-up.svg' onClick={this.onClickNextYear.bind(this)} /></div>
                     </div>
                     <div className={style['year-name']} >
-                        {this.state.yearsName.map( (el: any, idx) =>
+                        {this.state.yearsName.map( (el: any, idx: any) =>
                             <div className={ (el.isSelected ? style['month-selected']
                                 : !el.status ? style['past-present-disabled']
                                     : (el.isNowYear ? style['now-year-month-today']
@@ -120,12 +120,10 @@ export default class Years extends React.Component<YearsProps, YearsState> {
                             >{el.year}
                             {this.props.minDate && el.dataStamp < this.props.minDate && <DisableElement />}
                             {this.props.maxDate && el.dataStamp > this.props.maxDate && <DisableElement />}
-                            </div>
-                        )}
+                            </div>)}
                     </div>
                 </div>
             </div>
         )
     }
 }
-

@@ -4,6 +4,9 @@
   "description": "set, get and show date and time",
   "main": "build/index.js",
   "scripts": {
+    "lint": "tslint --project .",
+    "tslint": "tslint --project tsconfig.json",
+    "tslint2": "tslint --config tslint.json --project tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development --hot --port 3000 --open",
     "build": "webpack -p --progress --colors",

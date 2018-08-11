@@ -1,11 +1,10 @@
 import * as React from 'react';
 // import PropTypes from 'prop-types';
 
-import Hours from './hours';
 import Days from './days';
+import Hours from './hours';
 import Months from './months';
 import Years from './years';
-
 
 import style from './dateTimePicker.less';
 
@@ -17,7 +16,6 @@ const moment = require('moment');
 * date: timestamp
 *
 * */
-
 
 interface ReactDateTimePickerProps {
     showTime?: boolean;
@@ -53,7 +51,7 @@ export default class ReactDateTimePicker extends React.Component<ReactDateTimePi
             currentDisplayLayer: 1,
             defaultOnDisplay: 1,
             selected: this.props.date,
-            element: this.props.element || 'input'
+            element: this.props.element || 'input',
         };
 
         this.setWrapperRef = this.setWrapperRef.bind(this);
@@ -63,7 +61,7 @@ export default class ReactDateTimePicker extends React.Component<ReactDateTimePi
     componentDidMount() {
         this.setState({
             currentDisplayLayer: this.props.defaultOnDisplay || 1,
-            selected: this.props.date
+            selected: this.props.date,
         });
     }
 
@@ -92,7 +90,7 @@ export default class ReactDateTimePicker extends React.Component<ReactDateTimePi
     updateInputOnChange(e: any) {
         // console.log('updateInputOnChange', e);
     }
-    checkAndClose (level: number): void {
+    checkAndClose(level: number): void {
         if ( this.props.closeAutomatic && this.props.receiveSelectLevel === level && this.props.onClickChangeDate) {
             this.props.onClickChangeDate(this.state.selected);
         }
@@ -102,7 +100,7 @@ export default class ReactDateTimePicker extends React.Component<ReactDateTimePi
             nr = nr + 1;
             this.setState({
                 currentDisplayLayer: nr,
-                selected: newDateSelected
+                selected: newDateSelected,
             }, () => { this.checkAndClose(nr) });
         }
     }
@@ -111,11 +109,11 @@ export default class ReactDateTimePicker extends React.Component<ReactDateTimePi
             nr = nr - 1;
             this.setState({
                 currentDisplayLayer: nr,
-                selected: newDateSelected
+                selected: newDateSelected,
             }, () => { this.checkAndClose(nr) });
         } else {
             this.setState({
-                selected: newDateSelected
+                selected: newDateSelected,
             }, () => { this.checkAndClose(nr) });
         }
     }

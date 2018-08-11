@@ -14,8 +14,7 @@ export default class DisableElement extends React.Component<{}, {}> {
                 <svg height={100} width={100}>
                     {
                         count.map((i) =>
-                            <line key={i} x1={0} y1={i} x2={100} y2={i} className={style.line}></line>
-                        )
+                            <line key={i} x1={0} y1={i} x2={100} y2={i} className={style.line}></line>)
                     }
                 </svg>
             </div>

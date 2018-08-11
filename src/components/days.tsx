@@ -1,6 +1,6 @@
 import * as React from 'react';
-import style from './days.less';
 import * as utils from '../utils/momentDate';
+import style from './days.less';
 import DisableElement from './disableElement';
 
 const moment = require('moment');
@@ -54,15 +54,13 @@ export default class Days extends React.Component<DaysProps, DaysState> {
         const daysName = utils.getNamesDaysOfWeek(now.valueOf());
         selected = selected || this.state && this.state.daySelected || 0;
         const days = utils.getAllDaysFomLayoutMonthDisplay(now.valueOf(), selected);
-
-
         this.setState({
             isOnShow: false,
             yearMount: now.format('MMMM YYYY'),
             daysName,
             days,
             date: this.state && this.state.date || this.props.date,
-            daySelected: selected
+            daySelected: selected,
         });
     }
 
@@ -105,8 +103,8 @@ export default class Days extends React.Component<DaysProps, DaysState> {
                     </div>
                     <div className={style['days-title']} >
                         {this.state.daysName.map( (el) =>
-                            <div key={el} >{el}</div>
-                        )}
+                            <div key={el} >{el}</div>)
+                        }
                     </div>
                     <div className={style['days-number']} >
                         {this.state.days.map( (el: any, idx) =>
@@ -121,8 +119,8 @@ export default class Days extends React.Component<DaysProps, DaysState> {
                             >{el.day}
                             {this.props.minDate && el.dataStamp < this.props.minDate && <DisableElement />}
                             {this.props.maxDate && el.dataStamp > this.props.maxDate && <DisableElement />}
-                            </div>
-                        )}
+                            </div>)
+                        }
                     </div>
                 </div>
             </div>

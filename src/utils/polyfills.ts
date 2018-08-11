@@ -1,5 +1,5 @@
 // All polyfills here
 import 'classlist-polyfill';
-import 'nodelist-foreach-polyfill';
 import 'intl';
+import 'nodelist-foreach-polyfill';
 import 'reflect-metadata';

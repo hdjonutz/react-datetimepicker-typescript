@@ -20,7 +20,7 @@ export default class Hours extends React.Component<HoursProps, HoursStates> {
         this.state = {
             hour: '',
             day_mounth_year: '',
-            countPermision: false
+            countPermision: false,
         };
     }
 
@@ -40,7 +40,7 @@ export default class Hours extends React.Component<HoursProps, HoursStates> {
             this.setState({
                 hour,
                 day_mounth_year,
-                countPermision: true
+                countPermision: true,
             }, () => {
                 window.setTimeout(() => {
                     this.refresh();
@@ -63,4 +63,3 @@ export default class Hours extends React.Component<HoursProps, HoursStates> {
         )
     }
 }
-

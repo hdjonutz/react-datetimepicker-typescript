@@ -1,8 +1,18 @@
 {
+  "extends": [
+    "tslint:recommended"  // "all"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "src/utils/ripple.js"
+    ]
+  },
   "rulesDirectory": [],
   "rules": {
     "callable-types": true,
     "class-name": true,
+    "no-var-requires": false,
+    "array-type": [true, "generic"],
     "comment-format": [
       true,
       "check-space"
@@ -14,12 +24,14 @@
       true,
       "rxjs"
     ],
+    // "import-sources-order": "any",
     "import-spacing": true,
     "indent": [
       true,
       "spaces"
     ],
     "interface-over-type-literal": true,
+    "interface-name": [true, "never-prefix"],
     "label-position": true,
     "max-line-length": [
       true,
@@ -57,7 +69,7 @@
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": true,
     "no-unused-expression": true,
-    "no-unused-variable": true,
+    // "no-unused-variable": true,
     "no-use-before-declare": true,
     "no-var-keyword": true,
     "object-literal-sort-keys": false,
@@ -91,7 +103,6 @@
         "variable-declaration": "nospace"
       }
     ],
-    "typeof-compare": true,
     "unified-signatures": true,
     "variable-name": false,
     "whitespace": [

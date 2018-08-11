@@ -1,7 +1,7 @@
 import * as React from 'react';
-import style from './months.less';
 import * as utils from '../utils/momentDate';
 import DisableElement from './disableElement';
+import style from './months.less';
 
 const moment = require('moment');
 
@@ -89,7 +89,7 @@ export default class Months extends React.Component<MonthsProps, MonthsState> {
             year: now.format('YYYY'),
             monthsName,
             date: this.state && this.state.date || this.props.date,
-            monthSelected: selected
+            monthSelected: selected,
         });
     }
     onClickGoUP() {
@@ -121,8 +121,8 @@ export default class Months extends React.Component<MonthsProps, MonthsState> {
                             >{el.month}
                                 {this.props.minDate && el.dataStamp < this.props.minDate && <DisableElement />}
                                 {this.props.maxDate && el.dataStamp > this.props.maxDate && <DisableElement />}
-                            </div>
-                        )}
+                            </div>)
+                        }
                     </div>
                 </div>
             </div>
