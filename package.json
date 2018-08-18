@@ -1,7 +1,7 @@
 {
   "name": "react-dateTimePicker",
   "version": "1.0.0",
-  "description": "set, get and show date and time",
+  "description": "get and set time with a frontent widget react-dateTimePicker",
   "main": "build/index.js",
   "scripts": {
     "lint": "tslint --project .",
@@ -12,6 +12,18 @@
     "build": "webpack -p --progress --colors",
     "build:prod": "webpack -p --progress webpack.config.js",
     "status": "webpack -p --config webpack.config.js --env.analyzeBundle true"
+  },
+  "keywords": [
+    "react",
+    "date",
+    "time",
+    "picker",
+    "webpack",
+    "lint",
+    "typescript"
+  ],
+  "bugs": {
+    "url": "https://github.com/hdjonutz/react-date-Time-Picker/issues"
   },
   "author": "Hariga Daniel Ionut",
   "devDependencies": {
