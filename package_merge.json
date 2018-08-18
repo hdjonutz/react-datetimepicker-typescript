@@ -1,5 +1,5 @@
 {
-  "name": "react-dateTimePicker",
+  "name": "react-datetimepicker-typescript",
   "version": "1.0.0",
   "description": "set, get and show date and time",
   "main": "build/index.js",

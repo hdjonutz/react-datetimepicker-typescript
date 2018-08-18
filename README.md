@@ -1,6 +1,6 @@
 # react-date-Time-Picker
 
-![alt text](https://github.com/hdjonutz/react-datetimepicker/blob/master/dateTimePicker.png)
+![alt text](https://github.com/hdjonutz/react-datetimepicker-typescript/blob/master/dateTimePicker.png)
 
 
 
@@ -113,4 +113,4 @@ ReactDOM.render(
     </div>,
     document.getElementById('root_React_date_time_picker'));
 ```
-![alt text](https://github.com/hdjonutz/react-datetimepicker/blob/master/dateTimePickerNoheader.png)
+![alt text](https://github.com/hdjonutz/react-datetimepicker-typescript/blob/master/dateTimePickerNoheader.png)
