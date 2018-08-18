@@ -1,7 +1,7 @@
 {
-  "name": "react-dateTimePicker",
+  "name": "react-datetimepicker",
   "version": "1.0.0",
-  "description": "get and set time with a frontent widget react-dateTimePicker",
+  "description": "get and set time with a frontent widget react-datetimepicker",
   "main": "build/index.js",
   "scripts": {
     "lint": "tslint --project .",
@@ -23,12 +23,12 @@
     "typescript"
   ],
   "bugs": {
-    "url": "https://github.com/hdjonutz/react-date-Time-Picker/issues"
+    "url": "https://github.com/hdjonutz/react-datetimepicker/issues"
   },
   "author": "Hariga Daniel Ionut",
   "license": "MIT",
   "contributors": "hdjonutz",
-  "repository": "https://github.com/hdjonutz/react-date-Time-Picker.git",
+  "repository": "https://github.com/hdjonutz/react-datetimepicker.git",
   "devDependencies": {
     "@material-ui/core": "^1.3.1",
     "@types/classnames": "^2.2.4",
