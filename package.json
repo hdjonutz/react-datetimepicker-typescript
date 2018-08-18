@@ -26,6 +26,9 @@
     "url": "https://github.com/hdjonutz/react-date-Time-Picker/issues"
   },
   "author": "Hariga Daniel Ionut",
+  "license": "MIT",
+  "contributors": "hdjonutz",
+  "repository": "https://github.com/hdjonutz/react-date-Time-Picker.git",
   "devDependencies": {
     "@material-ui/core": "^1.3.1",
     "@types/classnames": "^2.2.4",
